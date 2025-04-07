@@ -1,10 +1,20 @@
+import math as m
 n = int(input())
-cont = 0
 
-for x in range(n, 1 -1, -1):
-    if n % x == 0:
-        cont =+ 1
-if cont == 2 or n==1:
-    print("{} eh primo" .format(n))
-else:
-    print("{} nao eh primo" .format(n))
+for i in range(n):
+    x = int(input())
+
+    if x < 2:
+        print(f'{x} nao eh primo')
+        continue
+
+    primo = True
+    for j in range(2, int(m.sqrt(x)) + 1):
+        if x % j == 0:
+            primo = False
+            break
+
+    if primo:
+        print(f'{x} eh primo')
+    else:
+        print(f'{x} nao eh primo')
