@@ -1,4 +1,4 @@
-SELECT temperature, COUNT(*) AS number_of_records
+SELECT temperature, count(*) AS number_of_records
 FROM records
-GROUP BY mark, temperature
-ORDER BY MIN(id);
+GROUP BY temperature, mark
+ORDER BY min(id);
